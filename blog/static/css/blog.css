@@ -4,15 +4,9 @@ h2 a {
     font-family: 'Lobster';
 }
 
-body {
-    padding: 15px;
-}
-
-
 .page-header {
     background-color: #C25100;
-    margin-top: 0;
-    padding: 20px 20px 20px 40px;
+    padding: 20px;
 }
 
 .page-header h1,
@@ -22,10 +16,11 @@ body {
     color: #ffffff;
     font-size: 36pt;
     text-decoration: none;
+    align-self: center;
 }
 
-.content {
-    margin-left: 40px;
+.fa {
+    margin: 8px;
 }
 
 h1,
@@ -37,6 +32,7 @@ h4 {
 
 .date {
     color: #828282;
+    text-decoration: underline;
 }
 
 .save {
@@ -53,19 +49,28 @@ h4 {
 .top-menu:visited {
     color: #ffffff;
     float: right;
-    font-size: 26pt;
-    margin-right: 20px;
+    font-size: 18pt;
+    margin-left: 20px;
 }
 
 .post {
-    margin-bottom: 70px;
+    margin-bottom: 48px;
 }
 
 .post h2 a,
 .post h2 a:visited {
-    color: #000000;
+    color:  #C25100;
 }
 
 .comment {
     margin: 20px 0px 20px 20px;
+}
+
+.content {
+    margin: 16px;
+}
+
+.btn-warning, #publish {
+    float: right;
+    margin-right: 16px;
 }
