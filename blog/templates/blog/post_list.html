@@ -11,5 +11,29 @@
         <a href="{% url 'post_detail' pk=post.pk %}">See Comments: {{ post.approved_comments.count |linebreaks }}</a>
     </div>
     {% endfor %}
+    {% for foo in user %}
+        {{ foo.userRoleName }}
+        {% if foo.isAdministrator %}
+            <div>
+                {{ foo.user_role.id }} : {{ foo.user_role.description }}
+            </div>
+        {% endif %}
+        {% if foo.isEditor %}
+            <div>
+                {{ foo.user_role.id }} : {{ foo.user_role.description }}
+            </div>
+        {% endif %}
+        {% if foo.isSubmitter %}
+            <div>
+                {{ foo.user_role.id }} : {{ foo.user_role.description }}
+            </div>
+        {% endif %}
+    {% endfor %}
+
+    {% for baa in rol %}
+        <div>
+            {{ baa.description }}
+        </div>
+    {% endfor %}
 {% endblock %}
             

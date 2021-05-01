@@ -32,3 +32,31 @@ class Comment(models.Model):
 
     def __str__(self):
         return self.text
+
+class UserRole (models.Model):
+    description = models.CharField(max_length=50)
+
+    def __str__(self):
+        return 'id: {0} and desc: {1}'.format(self.id, self.description)
+
+class UserProfile (models.Model):
+    user_role = models.ForeignKey(UserRole, related_name="role", on_delete=models.CASCADE)
+
+    # Return True if user is a submitter
+    def isSubmitter(self):
+        return self.user_role.id == UserRole.objects.get(id=1).id
+
+    # Return True if user is an editor
+    def isEditor(self):
+        return self.user_role.id == UserRole.objects.get(id=2).id
+
+    # Return True if user is an administrator
+    def isAdministrator(self):
+        return self.user_role.id == UserRole.objects.get(id=3).id
+
+    # Return the user role description
+    def userRoleName(self):
+        return UserRole.objects.get(id=self.user_role.id).description
+
+    def __str__(self):
+        return 'id: {0} and role: {1}'.format(self.id, self.user_role)
